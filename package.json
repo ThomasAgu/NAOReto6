@@ -1,0 +1,25 @@
+{
+  "name": "restaurantbson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThomasAgu/NAOReto6.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThomasAgu/NAOReto6/issues"
+  },
+  "homepage": "https://github.com/ThomasAgu/NAOReto6#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.3.2"
+  }
+}
