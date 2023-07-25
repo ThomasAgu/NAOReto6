@@ -135,7 +135,7 @@ app.post('/restaurant', async (req, res) => {
             res.status(201).json(result)
         })
         .catch(err => {
-            res.status(500).json({err: "No se pudo crear un restaurante uwu"})
+            res.status(500).json({err: err})
         })
 })
 
