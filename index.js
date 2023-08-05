@@ -21,10 +21,6 @@ app.use(bodyParser.urlencoded({ extended: true })); // Para procesar solicitudes
 
 
 //routes
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
-
 
 app.get('/restaurants', (req, res) => {
     let restaurants = []
@@ -82,8 +78,10 @@ app.get('/restaurantsPerNear', async (req, res) => {
 
     
     //pasar lat y lng por body
-    const lat = -73.856077;
-    const lng = 40.848447;
+    //const lat = -73.856077;
+    //const lng = 40.848447;
+    const lat = req.body.lat || '';
+    const lng = req.body.lng || '';
     const cuisineName = req.body.cuisine || ""
     const name = req.body.name || ""
     const regex = new RegExp('^' + cuisineName, 'i')
