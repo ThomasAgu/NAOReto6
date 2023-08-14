@@ -2,8 +2,6 @@ const { MongoClient } = require('mongodb')
 
 let dbConnection;
 
-
-//Crear la base de datros en el docker
 module.exports = {
     connectToDb: (cb) => {
         MongoClient.connect('mongodb://localhost:27017/Restaurant')
