@@ -10,12 +10,12 @@ router.get('/restaurants/:id', restaurantController.getRestaurantById);
 router.delete('/restaurants/:id', restaurantController.deleteRestaurantById);
 router.post('/restaurants', restaurantController.createRestaurant);
 router.patch('/restaurants/:id', restaurantController.updateRestaurantById);
-// Configura ratings...
+//Rutas Rating...
 router.get('/restaurants/ratings/:id', ratingController.getRatingRestaurant)
 router.post('/restaurants/ratings/:id', ratingController.postRatingRestaurant)
 
 //Rutas Comentar
 router.get('/restaurants/comments/:id', commentController.getCommentsRestaurant)
-router.post('/restaurants/comments/:id', commentController.postCommentRestaurant) //faltan los controladores
+router.post('/restaurants/comments/:id', commentController.postCommentRestaurant) 
 
 module.exports = router;
