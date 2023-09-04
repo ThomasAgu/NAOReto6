@@ -77,17 +77,22 @@ const restaurantController = {
 
     getRestaurantsByFilters: async (req, res) => {
       const filters = {
-        lat: req.body.lat || '',
-        lng: req.body.lng || '',
-        cuisine: new RegExp('^' + (req.body.cuisine || ''), 'i'),
-        name: new RegExp('^' + (req.body.name || ''), 'i'),
-        distance: req.body.distance || 5000,
-        order: req.body.order || 1
+        lat: parseFloat(req.params.lat) || 0,
+        lng: parseFloat(req.params.lng) || '',
+        cuisine: new RegExp('^' + (req.params.cuisine || ''), 'i'),
+        name: new RegExp('^' + (req.params.name || ''), 'i'),
+        distance: parseInt(req.params.distance) || 5000,
+        order: parseInt(req.params.order) || 1
       };
+
+  
+      console.log(filters)
       try {
         const restaurants = await restauranteModel.getRestaurantsByFilters(filters);
+    
         res.status(200).json(restaurants);
       } catch (error) {
+     
         res.status(500).json({ error: "No se pudieron obtener los restaurantes" });
       }
     },

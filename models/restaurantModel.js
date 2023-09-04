@@ -60,7 +60,7 @@ const restauranteModel = {
               $near: {
                 $geometry: {
                   type: "Point",
-                  coordinates: [filters.lat, filters.lng]
+                  coordinates: [Number(filters.lat), Number(filters.lng)]
                 },
                 $maxDistance: filters.distance
               }
